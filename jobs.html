@@ -4,9 +4,11 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]> <html class="no-js"> <![endif]-->
-  <head>
-  
-  
+<head>
+
+<!-- Custom Jobs CSS; Placed here to avoid base href. -->
+<link rel='stylesheet' id='lam_jobs-css'  href='./assets/css/jobs.css' type='text/css' media='all' />
+
 <base href="https://c-8064-20161021-www-landmarkhealth-org.i.icims.com" /> 	
   
          <meta charset="UTF-8">
@@ -115,7 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li id="nav-menu-item-422" class="firstitem menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.landmarkhealth.org/patients/" data-id="132" class="menu-link">Patients</a></li>
 <li id="nav-menu-item-138" class="firstitem menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.landmarkhealth.org/caregivers/" data-id="14" class="menu-link">Family &#038; Caregivers</a></li>
 <li id="nav-menu-item-26" class="firstitem menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.landmarkhealth.org/providers/" data-id="9" class="menu-link">Providers</a></li>
-<li id="nav-menu-item-25" class="firstitem menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://www.landmarkhealth.org/careers/" data-id="11" class="menu-link">Careers</a>
+<li id="nav-menu-item-25" class="firstitem menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://www.landmarkhealth.org/careers/" data-id="11" class="menu-link">Careers</a> <!-- Change the HREF later -->
 <ul class="dropdown-menu ">
 	<li id="nav-menu-item-1170" class=" menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="https://careers-landmarkhealth.icims.com" data-id="1170" class="menu-link">Job Listings</a></li>
 	
@@ -132,118 +134,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </header>    </div>
-    
-<section class="landmark-waypoint">  
 
+<!-- Deleted ICIMS Scripts-->
+<!-- Beginning of Custom Replica -->
+<section class="landmark-waypoint">
+  <div class=" wpb_row vc_row-fluid animated">
+    <div class="container">
+      <div class="row">
+        <div class="row-padding wpb_column vc_column_container vc_col-sm-12">
+          <div class="wpb_wrapper">
+            <div class="wpb_text_column wpb_content_element ">
+              <div class="wpb_wrapper">
+                <!-- Beginning of Returning User Login -->
+                <div class="icims-user-profile col-xs-12 text-right text-muted" id="userProfilePadding">
+                  <div class="iCIMS_profilePicture">
+                    <div class="iCIMS_userMenu">
+                      <div class="iCIMS_userMenuName">Returning Candidate?</div>
+                        <div class="iCIMS_userMenuLink"><a id="rUserLoginLink" href="https://careers-landmarkhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435627142">Log back in!</a>
+                        </div>
+                      </div>
+                    <div class="iCIMS_FloatHack"></div>
+                  </div>
+                </div>
+                <!-- End of Returning User Login -->
+                <!-- Beginning of Custom Content -->
+                <h1 id="jobListingsHeader">Job Listings</h1>
+                <h3 class="jSubHead">Click on the states highlighted below to search for existing clinical career opportunities.</h2>
+                <h3 class="jSubHead">Or use this form to perform another job search.</h2>
+                <!-- End of Custom Content -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Custom Replica -->
 
-  <!-- Page Content Start -->
-    <div class=" wpb_row vc_row-fluid animated"><div class="container"><div class="row"><div class="row-padding wpb_column vc_column_container vc_col-sm-12"><div class="wpb_wrapper">
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-
-		<!--BEGIN ICIMS-->
-<script type="text/javascript" src="https://cdn07.icims.com/a/images.icims.com/content/platform_102.1.161208.95495/script/lib/domreplacement/domReplacement.js"></script>
-<script type="text/javascript" src="https://cdn07.icims.com/a/images.icims.com/content/platform_102.1.161208.95495/script/common/icims.js"></script>
-<script type="text/javascript" src="https://cdn07.icims.com/a/images.icims.com/content/platform_102.1.161208.95495/script/portal/utils.js"></script>
-<script type="text/javascript">var useAutoScrolling = false;</script>
-<!--[if lte IE 8]>
-<script type="text/javascript">useAutoScrolling = true;</script>
-<![endif]-->
-<script type="text/javascript">
-
-if (window.addEventListener) {
-window.addEventListener('message', icims_handlePostMessage, false);
-} else if (window.attachEvent) {
-window.attachEvent('onmessage', icims_handlePostMessage);
-}
-function icims_handlePostMessage(event) {
-// If this is not a message from an icims domain, ignore it.
-if (event.origin.indexOf('icims.com', event.origin.length - 9) == -1) return;
-var data = null;
-try {
-data = ICIMS.jsonDecode(event.data);
-} catch(e) {}
-if (data == null && event.data != null) data = event.data;
-try {
-if ('height' in data) {
-if (!isNaN(data['height'])) {
-document.getElementById('icims_content_iframe').height = parseInt(data['height']) + 60;
-}
-} else if ('x' in data && 'y' in data) {
-if (!isNaN(data['x']) && !isNaN(data['y'])) {
-top.scrollTo(parseInt(data['x']), parseInt(data['y']));
-}
-}
-} catch (e) {}
-}
-function getCookie(name) {
-var match = document.cookie.match(name + '=(.*?)(;|$)');
-if (match) return unescape(match[1]);
-else return "";
-}
-function updateUrl(url) {
-try {
-history.replaceState({}, '', url);
-} catch (e) {}
-}
-icimsAddOnload(function() {
-var icimsFrame = document.createElement('iframe');
-var iFrameHeight = 500;
-icimsFrame.id = 'icims_content_iframe';
-icimsFrame.name = 'icims_content_iframe';
-icimsFrame.src = 'https:\/\/careers-landmarkhealth.icims.com\/jobs\/search?hashed=-435627142&in_iframe=1';
-icimsFrame.setAttribute('width', '100%');
-
-
-iFrameHeight = 500;
-
-icimsFrame.setAttribute('height', iFrameHeight);
-
-if (!useAutoScrolling && window.postMessage) {
-icimsFrame.setAttribute('scrolling', 'no');
-} else {
-icimsFrame.setAttribute('scrolling', 'auto');
-}
-icimsFrame.setAttribute('title', 'iCIMS Content iFrame');
-icimsFrame.setAttribute('marginwidth', '0');
-icimsFrame.setAttribute('marginheight', '0');
-icimsFrame.setAttribute('frameborder', '0');
-icimsFrame.onload=function() {
-try {
-window.parent.parent.scrollTo(0,0);
-} catch (e) {}
-};
-document.getElementById('icims_iframe_span').appendChild(icimsFrame);
-try {
-var height = getCookie('cookie_icims_iframe_content_height');
-if (height > 0) style.height = height + 'px';
-} catch(e) {}
-document.getElementById('icims_content_iframe').onreadystatechange = function() {
-try{
-if ('interactive' == this.readyState) {
-window.scroll(1,1);
-}
-} catch(e) {}
-};
-try {
-var height = 0;
-if (navigator.userAgent.indexOf("Firefox")!=-1) height = document.body.offsetHeight + 16;
-else height = document.body.scrollHeight;
-document.cookie="cookie_icims_iframe_content_height="+height+"; path=/;";
-} catch(e) {}
-});
-</script>
-<span id="icims_iframe_span">
-<noscript>
-<iframe src="https://careers-landmarkhealth.icims.com/jobs/search?hashed=-435627142&amp;in_iframe=1" id="icims_content_iframe" name="icims_content_iframe" title="iCIMS Content iFrame" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" width="100%" height="500">Your browser does not support inline frames or is currently configured not to display inline frames. Content can be viewed at the actual source page: _IFRAME_SRC_</iframe>
-</noscript>
-</span>
-<!--END ICIMS-->
-		</div>
-	</div>
-</div></div></div></div></div>
-
-    </section>
 <script type="text/javascript">
 function sendmail(){
 	//sendmail("ddesf");
