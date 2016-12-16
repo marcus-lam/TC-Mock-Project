@@ -117,7 +117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li id="nav-menu-item-422" class="firstitem menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.landmarkhealth.org/patients/" data-id="132" class="menu-link">Patients</a></li>
 <li id="nav-menu-item-138" class="firstitem menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.landmarkhealth.org/caregivers/" data-id="14" class="menu-link">Family &#038; Caregivers</a></li>
 <li id="nav-menu-item-26" class="firstitem menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.landmarkhealth.org/providers/" data-id="9" class="menu-link">Providers</a></li>
-<li id="nav-menu-item-25" class="firstitem menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://www.landmarkhealth.org/careers/" data-id="11" class="menu-link">Careers</a> <!-- Change the HREF later -->
+<li id="nav-menu-item-25" class="firstitem menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://www.landmarkhealth.org/careers/" data-id="11" class="menu-link">Careers</a> <!-- Change the HREF later. -->
 <ul class="dropdown-menu ">
 	<li id="nav-menu-item-1170" class=" menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="https://careers-landmarkhealth.icims.com" data-id="1170" class="menu-link">Job Listings</a></li>
 	
@@ -141,16 +141,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class=" wpb_row vc_row-fluid animated">
     <div class="container">
       <div class="row">
-        <div class="row-padding wpb_column vc_column_container vc_col-sm-12">
+        <div class="row-padding-v2 wpb_column vc_column_container vc_col-sm-12">
           <div class="wpb_wrapper">
             <div class="wpb_text_column wpb_content_element ">
               <div class="wpb_wrapper">
                 <!-- Beginning of Custom Content -->
-                <h1 class="jobHeader">Career Map</h1>
-                <h3 class="jobSubHeader">Click on the highlighted states below to find existing career opportunities.</h2>
-                <div id="mapDiv">
-<iframe src="http://createaclickablemap.com/map.php?&id=55433&online=true" width="100%" height="100%" style="border: none;"></iframe>
-<script> var localPath = window.location.href.slice(0, -9); if (window.addEventListener){ window.addEventListener("message", function(event) { if(event.data.length >= 22) { if( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = localPath + event.data.substr(22); } }, false); } else if (window.attachEvent){ window.attachEvent("message", function(event) { if( event.data.length >= 22) { if ( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = localPath + event.data.substr(22); } }, false); } </script>
+                <h1 class="jobHeader">Job Listings</h1>
+                <h3 class="jobSubHeader">Here are our current job openings. Please click on the job below for more information, and apply from that page if you are interested.</h3>
+                <div class="jobListingsDiv">
+
                 </div>
                 <!-- End of Custom Content -->
               </div>
@@ -162,6 +161,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 <!-- End of Custom Replica -->
+
+<!-- Beginning of Custom Script for Mock Data -->
+<script>
+  $(document).ready(function() {
+
+    var localPath = window.location.href.slice(0, -12);
+    var mapPath = "jobs.html";
+
+    var mockJobsArray = [];
+
+    function job(title, locations, category, date, link) {
+      this.title = title;
+      this.locations = locations;
+      this.category = category;
+      this.date = date;
+      this.link = link;
+    };
+
+    var mockJob1 = new job("Physician Assistant", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1137/physician-assistant/job");
+    var mockJob2 = new job("Nurse Practitioner", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1138/nurse-practitioner/job");
+    var mockJob3 = new job("Technical Support Specialist", "US-WA-Seattle", "Information Technology", "11/11/2016", "https://careers-landmarkhealth.icims.com/jobs/1056/technical-support-specialist/job");
+    var mockJob4 = new job("Senior Consultant, Healthcare Economics", "US-WA-Seattle", "Finance", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1076/senior-consultant%2c-healthcare-economics/job");
+    var mockJob5 = new job("Nurse Care Advocate", ["US-WA-Seattle", "US-WA-Federal Way"], "Clinical Delivery Field", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1085/nurse-care-advocate/job");
+
+    mockJobsArray.push(mockJob1, mockJob2, mockJob3, mockJob4, mockJob5);
+
+    for (var i=0; i<mockJobsArray.length; i++) {
+      var jobContent = "";
+      jobContent += "<a href='" + mockJobsArray[i].link + "'><div class='jobStyle'><h1 class='jobHeader'>" + mockJobsArray[i].title + " - " + mockJobsArray[i].locations + "</h1>";
+      jobContent += "<h4>Category: " + mockJobsArray[i].category + "<br>Date Posted: " + mockJobsArray[i].date + "</h4></div></a><hr>";
+      $(".jobListingsDiv").append(jobContent);
+    }
+
+    var mapButton = "<div class='center'><span class='buton b_asset buton-2 buton-large'><a href='" + localPath + mapPath + "'>RETURN TO THE CAREER MAP</a></span></div>";
+
+    $(".jobListingsDiv").append(mapButton);
+
+  });
+</script>
+<!-- End of Custom Script -->
 
 <script type="text/javascript">
 function sendmail(){
