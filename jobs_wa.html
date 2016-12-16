@@ -148,9 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <!-- Beginning of Custom Content -->
                 <h1 class="jobHeader">Job Listings</h1>
                 <h3 class="jobSubHeader">Here are our current job openings. Please click on the job below for more information, and apply from that page if you are interested.</h3>
-                <div class="jobListingsDiv">
-
-                </div>
+                <div class="jobListingsDiv"></div>
                 <!-- End of Custom Content -->
               </div>
             </div>
@@ -171,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     var mockJobsArray = [];
 
-    function job(title, locations, category, date, link) {
+    function Job(title, locations, category, date, link) {
       this.title = title;
       this.locations = locations;
       this.category = category;
@@ -179,11 +177,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       this.link = link;
     };
 
-    var mockJob1 = new job("Physician Assistant", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1137/physician-assistant/job");
-    var mockJob2 = new job("Nurse Practitioner", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1138/nurse-practitioner/job");
-    var mockJob3 = new job("Technical Support Specialist", "US-WA-Seattle", "Information Technology", "11/11/2016", "https://careers-landmarkhealth.icims.com/jobs/1056/technical-support-specialist/job");
-    var mockJob4 = new job("Senior Consultant, Healthcare Economics", "US-WA-Seattle", "Finance", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1076/senior-consultant%2c-healthcare-economics/job");
-    var mockJob5 = new job("Nurse Care Advocate", ["US-WA-Seattle", "US-WA-Federal Way"], "Clinical Delivery Field", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1085/nurse-care-advocate/job");
+    var mockJob1 = new Job("Physician Assistant", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1137/physician-assistant/job");
+    var mockJob2 = new Job("Nurse Practitioner", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1138/nurse-practitioner/job");
+    var mockJob3 = new Job("Technical Support Specialist", "US-WA-Seattle", "Information Technology", "11/11/2016", "https://careers-landmarkhealth.icims.com/jobs/1056/technical-support-specialist/job");
+    var mockJob4 = new Job("Senior Consultant, Healthcare Economics", "US-WA-Seattle", "Finance", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1076/senior-consultant%2c-healthcare-economics/job");
+    var mockJob5 = new Job("Nurse Care Advocate", ["US-WA-Seattle", "US-WA-Federal Way"], "Clinical Delivery Field", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1085/nurse-care-advocate/job");
 
     mockJobsArray.push(mockJob1, mockJob2, mockJob3, mockJob4, mockJob5);
 
