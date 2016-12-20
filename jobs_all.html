@@ -145,26 +145,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="wpb_wrapper">
             <div class="wpb_text_column wpb_content_element ">
               <div class="wpb_wrapper">
-                <!-- Beginning of Returning User Login -->
-                <div class="icims-user-profile col-xs-12 text-right text-muted" id="userProfilePadding">
-                  <div class="iCIMS_profilePicture">
-                    <div class="iCIMS_userMenu">
-                      <div class="iCIMS_userMenuName">Returning Candidate?</div>
-                        <div class="iCIMS_userMenuLink"><a id="rUserLoginLink" href="https://careers-landmarkhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435627142">Log back in!</a>
-                        </div>
-                      </div>
-                    <div class="iCIMS_FloatHack"></div>
-                  </div>
-                </div>
-                <!-- End of Returning User Login -->
                 <!-- Beginning of Custom Content -->
-                <h1 class="jobHeader">Career Map</h1>
-                <h3 class="jobSubHeader">Click on the highlighted states below to find existing career opportunities.</h3>
-                <div id="mapDiv">
-                  <iframe src="http://createaclickablemap.com/map.php?&id=55445&online=true" width="100%" height="100%" style="border: none;"></iframe>
-                  <!-- Added localPath to bypass base href and redirect to local files. -->
-                  <script> var localPath = window.location.href.slice(0, -9); if (window.addEventListener){ window.addEventListener("message", function(event) { if(event.data.length >= 22) { if( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = localPath + event.data.substr(22); } }, false); } else if (window.attachEvent){ window.attachEvent("message", function(event) { if( event.data.length >= 22) { if ( event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = localPath + event.data.substr(22); } }, false); } </script>
-                </div>
+                <h1 class="jobHeader">Job Listings</h1>
+                <h3 class="jobSubHeader">Here are our current job openings. Please click on the job below for more information, and apply from that page if you are interested.</h3>
                 <div class="jobListingsDiv"></div>
                 <!-- End of Custom Content -->
               </div>
@@ -181,10 +164,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   $(document).ready(function() {
 
-    var localPath = window.location.href.slice(0, -9);
-    var mapPath = "jobs_all.html";
+    var localPath = window.location.href.slice(0, -13);
+    var mapPath = "jobs.html";
 
-    var mapButton = "<div class='center'><span class='buton b_asset buton-2 buton-large'><a href='" + localPath + mapPath + "'>VIEW ALL OPPORTUNITIES</a></span></div>";
+    var mockJobsArray = [];
+
+    function Job(title, locations, category, date, link) {
+      this.title = title;
+      this.locations = locations;
+      this.category = category;
+      this.date = date;
+      this.link = link;
+    };
+
+    var mockJob1 = new Job("Physician Assistant", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1137/physician-assistant/job");
+    var mockJob2 = new Job("Nurse Practitioner", "US-WA-Spokane", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1138/nurse-practitioner/job");
+    var mockJob3 = new Job("Technical Support Specialist", "US-WA-Seattle", "Information Technology", "11/11/2016", "https://careers-landmarkhealth.icims.com/jobs/1056/technical-support-specialist/job");
+    var mockJob4 = new Job("Senior Consultant, Healthcare Economics", "US-WA-Seattle", "Finance", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1076/senior-consultant%2c-healthcare-economics/job");
+    var mockJob5 = new Job("Nurse Care Advocate", ["US-WA-Seattle", "US-WA-Federal Way"], "Clinical Delivery Field", "11/14/2016", "https://careers-landmarkhealth.icims.com/jobs/1085/nurse-care-advocate/job");
+    var mockJob6 = new Job("Vice President, General Manager", "US-PA-Harrisburg", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1142/vice-president%2c-general-manager/job");
+    var mockJob7 = new Job("Director, Health Services", "US-PA-Harrisburg", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1144/director%2c-health-services/job");
+    var mockJob8 = new Job("Regional Medical Director", "US-PA-Harrisburg", "Clinical Delivery Field", "11/28/2016", "https://careers-landmarkhealth.icims.com/jobs/1148/regional-medical-director/job");
+    var mockJob9 = new Job("Nurse Practitioner", "US-PA-Harrisburg", "Clinical Delivery Field", "12/13/2016", "https://careers-landmarkhealth.icims.com/jobs/1184/nurse-practitioner/job");
+    var mockJob10 = new Job("Physician", "US-PA-Harrisburg", "Clinical Delivery Field", "12/13/2016", "https://careers-landmarkhealth.icims.com/jobs/1185/physician/job");
+
+    mockJobsArray.push(mockJob1, mockJob2, mockJob3, mockJob4, mockJob5, mockJob6, mockJob7, mockJob8, mockJob9, mockJob10);
+
+    for (var i=0; i<mockJobsArray.length; i++) {
+      var jobContent = "";
+      jobContent += "<a href='" + mockJobsArray[i].link + "'><div class='jobStyle'><h1 class='jobHeader'>" + mockJobsArray[i].title + " - " + mockJobsArray[i].locations + "</h1>";
+      jobContent += "<h4>Category: " + mockJobsArray[i].category + "<br>Date Posted: " + mockJobsArray[i].date + "</h4></div></a><hr>";
+      $(".jobListingsDiv").append(jobContent);
+    }
+
+    var mapButton = "<div class='center'><span class='buton b_asset buton-2 buton-large'><a href='" + localPath + mapPath + "'>RETURN TO THE CAREER MAP</a></span></div>";
 
     $(".jobListingsDiv").append(mapButton);
 
